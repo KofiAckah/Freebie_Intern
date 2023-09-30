@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image,StatusBar,ScrollView } from 'react-native'
+import { StyleSheet, Text, View,Image,StatusBar,ScrollView,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -60,6 +60,24 @@ const Detail = ({route}) => {
               <MaterialCommunityIcons name="message" size={30} color="white"/>
             </View>
           </View>
+        </View>
+        <Text className="text-xl m-4">Gallery</Text>
+        <View className="flex-row w-full">
+          <Image source={require('../../assets/Images/inside1.jpeg')} className="w-1/5 h-20 ml-4 rounded-xl"/>
+          <Image source={require('../../assets/Images/inside2.jpeg')} className="w-1/5 h-20 ml-3 rounded-xl"/>
+          <Image source={require('../../assets/Images/inside3.jpeg')} className="w-1/5 h-20 ml-3 rounded-xl"/>
+          <TouchableOpacity className="w-1/5 h-20 ml-3 rounded-xl flex">
+            <Image source={require('../../assets/Images/inside4.jpeg')} className="w-full h-20 rounded-xl opacity-50 bg-black"/>
+            <Text className="text-white absolute bottom-5 left-5 text-2xl">+5</Text>
+          </TouchableOpacity>
+        </View>
+        <Image source={require('../../assets/Images/map.png')} className="w-80 h-40 mt-4 mx-auto rounded-2xl"/>
+        <View className="flex-row m-4 justify-between items-center">
+          <View classNamemx="">
+            <Text className="text-gray-500 mb-1">Price</Text>
+            <Text className="text-lg">Rp. {dataRoot.price} / Year</Text>
+          </View>
+          <Text className="p-3 bg-primary rounded-lg text-white text-lg px-5">Rent Now</Text>
         </View>
       </ScrollView>
     </View>

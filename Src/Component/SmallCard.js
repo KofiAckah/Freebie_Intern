@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { StyleSheet, Text, View,Image,TouchableOpacity } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const SmallCard = ({imageSource,name,price,bedroomNum,bathroomNum}) => {
+const SmallCard = ({imageSource,name,price,bedroomNum,bathroomNum,onPress}) => {
   return (
-    <View className="m-3 flex-row">
+    <TouchableOpacity className="m-3 flex-row" onPress={onPress}>
       <Image source={imageSource} className="w-24 h-24 rounded-3xl"/>
       <View className="flew-row ml-5">
         <Text className="text-xl">{name}</Text>
@@ -16,7 +16,7 @@ const SmallCard = ({imageSource,name,price,bedroomNum,bathroomNum}) => {
           <Text className="text-gray-500">{bathroomNum} Bathroom</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
